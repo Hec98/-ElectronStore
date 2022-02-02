@@ -5,7 +5,7 @@ const path = require('path')
 if(process.env.NODE_ENV !== 'production')
   require('electron-reload')(__dirname,{
     electron: path.join(__dirname, '../node_modules', '.bin', 'electron')
-  })
+  });
 
 let mainWindow;
 let newProductWindow;
@@ -24,7 +24,7 @@ app.on('ready', () => {
 });
 
 const createNewProductWindow = () => {
-  newProductWindow =new BrowserWindow({
+  newProductWindow = new BrowserWindow({
     width: 400,
     height: 400,
     title: 'Add A New Product'
@@ -36,7 +36,7 @@ const createNewProductWindow = () => {
     path.join(__dirname, 'views/new-product.html'), 
     { protocol: 'file', slashes: true }
   ));
-}
+};
 
 const templateMetu = [{
   label: 'File',
@@ -47,4 +47,4 @@ const templateMetu = [{
         createNewProductWindow();
       }
     }]
-  }]
+  }];
