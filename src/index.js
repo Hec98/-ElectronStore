@@ -20,6 +20,10 @@ app.on('ready', () => {
 
   const mainMenu = Menu.buildFromTemplate(templateMetu);
   Menu.setApplicationMenu(mainMenu);
+
+  mainWindow.on('close', () => {
+    app.quit()
+  });
   
 });
 
@@ -36,15 +40,19 @@ const createNewProductWindow = () => {
     path.join(__dirname, 'views/new-product.html'), 
     { protocol: 'file', slashes: true }
   ));
+
+  newProductWindow.on('close', () => {
+    newProductWindow = null;
+  });
 };
 
 const templateMetu = [{
   label: 'File',
   submenu: [{
-      label: 'New Product',
-      accelerator: 'Ctrl+N',        
-      click() {
-        createNewProductWindow();
-      }
-    }]
-  }];
+	  label: 'New Product',
+	  accelerator: 'Ctrl+N',
+	  click() {
+		  createNewProductWindow();
+	  }
+  }]
+}];
