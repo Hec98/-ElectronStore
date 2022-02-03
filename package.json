@@ -1,7 +1,7 @@
 {
   "name": "electronstore",
   "version": "1.0.0",
-  "description": "",
+  "description": "[Electron.js Aplicaciones de Escritorio con HTML, Javascript y Node](https://youtu.be/0BWzZ6c8z-g?t=2667)",
   "main": "src/index.js",
   "scripts": {
     "start": "electron src/index.js",
@@ -19,7 +19,7 @@
   },
   "homepage": "https://gitlab.com/Hec98/electronstore#readme",
   "dependencies": {
-    "bootstrap": "^5.1.3",
+    "bootswatch": "^5.1.3",
     "electron": "^16.0.8",
     "electron-reload": "^2.0.0-alpha.1"
   }
