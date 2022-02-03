@@ -34,7 +34,7 @@ const createNewProductWindow = () => {
     title: 'Add A New Product'
   });
 
-  newProductWindow.setMenu(null);
+  // newProductWindow.setMenu(null);
   
   newProductWindow.loadFile(url.format(
     path.join(__dirname, 'views/new-product.html'), 
@@ -79,6 +79,7 @@ if(process.platform === 'darwin') {
 if(process.env.NODE_ENV !== 'production') {
   templateMetu.push({
     label: 'DevTools',
+    accelerator: 'Ctrl+D',
     submenu: [
       {
         label: 'Show/Hide Dev Tools',

@@ -3,15 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Add A New Product</title>
+  <link href="../../node_modules/bootswatch/dist/superhero/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+  
+  <form class="container p-4">
+    <div class="mb-3">
+      <input type="text" id="name" class="form-control" placeholder="Product´s name" autofocus>
+    </div>
+    <div class="mb-3">
+      <input type="text" id="price" class="form-control" placeholder="Price">
+    </div>
+    <div class="mb-3">
+      <input type="text" id="description" class="form-control" placeholder="Description">
+    </div>
 
-  <h1>New</h1>
+    <div class="d-grid gap-2">
+      <button type="submit" class="btn btn-primary btn-lg" type="button">Save Product</button>
+    </div>
+  </form>
+  
+  <script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit', event => {
+      const nameProduct = document.querySelector('#name').value;
+      const priceProduct = document.querySelector('#name').value;
+      const descriptionProduct = document.querySelector('#name').value;
+      console.log({nameProduct, priceProduct, descriptionProduct});
+      event.preventDefault();
+    });
+  </script>
 
 </body>
-
-<script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
 </html>
