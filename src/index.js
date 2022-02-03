@@ -47,12 +47,49 @@ const createNewProductWindow = () => {
 };
 
 const templateMetu = [{
-  label: 'File',
-  submenu: [{
-	  label: 'New Product',
-	  accelerator: 'Ctrl+N',
-	  click() {
-		  createNewProductWindow();
-	  }
-  }]
-}];
+    label: 'File',
+    submenu: [{
+        label: 'New Product',
+        accelerator: 'Ctrl+N',
+        click() {
+          createNewProductWindow();
+        }
+      },
+      {
+        label: 'Remove All Product',
+        click() {}
+      },
+      {
+        label: 'Exit',
+        accelerator: process.platform == 'darwin' ? 'command+Q' : 'Ctrl+Q',
+        click() {
+          app.quit();
+        }
+      },
+    ]
+  },
+];
+
+if(process.platform === 'darwin') {
+  templateMetu.unshift({
+    label: app.getName()
+  });
+}
+
+if(process.env.NODE_ENV !== 'production') {
+  templateMetu.push({
+    label: 'DevTools',
+    submenu: [
+      {
+        label: 'Show/Hide Dev Tools',
+        click(_, focusedWindow) {
+          focusedWindow.toggleDevTools();
+        }
+      },
+      {
+        role: 'reload'
+      }
+    ]
+  })
+}
+
