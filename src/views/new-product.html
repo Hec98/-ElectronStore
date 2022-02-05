@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Add A New Product</title>
-  <link href="../../node_modules/bootswatch/dist/superhero/bootstrap.min.css" rel="stylesheet">
+  <link href="../../node_modules/bootswatch/dist/sketchy/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
   
@@ -18,9 +18,8 @@
     <div class="mb-3">
       <input type="text" id="description" class="form-control" placeholder="Description">
     </div>
-
     <div class="d-grid gap-2">
-      <button type="submit" class="btn btn-primary btn-lg" type="button">Save Product</button>
+      <button type="submit" class="btn btn-primary" type="button">Save Product</button>
     </div>
   </form>
   
@@ -28,8 +27,8 @@
     const form = document.querySelector('form');
     form.addEventListener('submit', event => {
       const nameProduct = document.querySelector('#name').value;
-      const priceProduct = document.querySelector('#name').value;
-      const descriptionProduct = document.querySelector('#name').value;
+      const priceProduct = document.querySelector('#price').value;
+      const descriptionProduct = document.querySelector('#description').value;
       console.log({nameProduct, priceProduct, descriptionProduct});
       event.preventDefault();
     });

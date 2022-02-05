@@ -29,8 +29,8 @@ app.on('ready', () => {
 
 const createNewProductWindow = () => {
   newProductWindow = new BrowserWindow({
-    width: 400,
-    height: 400,
+    width: 500,
+    height: 500,
     title: 'Add A New Product'
   });
 
